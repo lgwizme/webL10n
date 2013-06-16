@@ -982,12 +982,8 @@ document.webL10n = (function(window, document, undefined) {
 
     // dummy `console.log' and `console.warn' functions
     if (!window.console) {
-      consoleLog = function(message) {}; // just ignore console.log calls
-      consoleWarn = function(message) {
-        if (gDEBUG) {
-          alert('[l10n] ' + message); // vintage debugging, baby!
-        }
-      };
+      // just ignore debug calls
+      consoleLog = consoleWarn = function(message) {};
     }
 
     // XMLHttpRequest for IE6
