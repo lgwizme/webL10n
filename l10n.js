@@ -1005,7 +1005,7 @@ document.webL10n = (function(window, document, undefined) {
           }
         };
         xhr.send(null);
-      }
+      };
     }
 
     // worst hack ever for IE6 and IE7
