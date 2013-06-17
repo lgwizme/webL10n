@@ -288,7 +288,9 @@ document.webL10n = (function(window, document, undefined) {
     callback = callback || function _callback() {};
 
     clear();
-    gLanguage = lang;
+    gLanguage = lang = lang.replace(/-[a-z]{2}$/i, function(str) {
+      return str.toUpperCase();
+    });
 
     // check all <link type="application/l10n" href="..." /> nodes
     // and load the resource files
